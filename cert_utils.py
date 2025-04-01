@@ -18,6 +18,7 @@ def generate_ca_cert(country_code_ca, province_ca, locality_ca, organization_ca,
     ])
 
     ca_cert = (
+        
         CertificateBuilder()
         .subject_name(subject)
         .issuer_name(issuer)

@@ -37,7 +37,6 @@ def generate_partner():
     org_name_part = request.form['org_name_part']
     common_name_part = request.form['common_name_part']
 
-    # Generate a new CA certificate every time (or load from an actual stored CA cert)
     ca_key_pem, ca_cert_pem = generate_ca_cert("US", "California", "San Francisco", "Example CA", "example.com")
 
     partner_key_pem, partner_cert_pem = generate_partner_cert(

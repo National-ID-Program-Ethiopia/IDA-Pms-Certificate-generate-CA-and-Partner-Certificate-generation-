@@ -87,6 +87,28 @@
         </div>
         
         <div class="container">
+            <h1>Generate Intermediate Certificate</h1>
+            <form action="/generate_intermediate" method="post">
+                <label>Country Code:</label>
+                <input type="text" name="country_code_int" required maxlength="2" pattern="[A-Za-z]{2}" title="Enter exactly 2 letters of country code">
+                
+                <label>State/Province:</label>
+                <input type="text" name="province_int" required>
+                
+                <label>Locality:</label>
+                <input type="text" name="locality_int" required>
+                
+                <label>Organization Name:</label>
+                <input type="text" name="org_name_int" required>
+                
+                <label>Common Name (CN):</label>
+                <input type="text" name="common_name_int" required>
+                
+                <button type="submit">Download Intermediate Certificate</button>
+            </form>
+        </div>
+        
+        <div class="container">
             <h1>Generate Partner Certificate</h1>
             <form action="/generate_partner" method="post">
                 <label>Country Code:</label>

@@ -4,7 +4,7 @@ from cryptography.x509 import NameOID, CertificateBuilder, random_serial_number
 from cryptography import x509
 import datetime
 
-# Generate CA Certificate
+
 def generate_ca_cert(country_code, province, locality, organization, common_name):
     ca_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
     subject = issuer = x509.Name([
@@ -36,7 +36,7 @@ def generate_ca_cert(country_code, province, locality, organization, common_name
         ca_cert.public_bytes(serialization.Encoding.PEM)
     )
 
-# Generate Intermediate Certificate (signed by CA)
+
 def generate_intermediate_cert(ca_key_pem, ca_cert_pem, country_code, province, locality, organization, common_name):
     ca_key = serialization.load_pem_private_key(ca_key_pem, password=None)
     ca_cert = x509.load_pem_x509_certificate(ca_cert_pem)
@@ -71,7 +71,7 @@ def generate_intermediate_cert(ca_key_pem, ca_cert_pem, country_code, province, 
         int_cert.public_bytes(serialization.Encoding.PEM)
     )
 
-# Generate Partner Certificate (signed by Intermediate)
+
 def generate_partner_cert(int_key_pem, int_cert_pem, country_code, province, locality, organization, common_name):
     int_key = serialization.load_pem_private_key(int_key_pem, password=None)
     int_cert = x509.load_pem_x509_certificate(int_cert_pem)

@@ -82,7 +82,10 @@
                 <label>Common Name (CN):</label>
                 <input type="text" name="common_name_ca" required>
                 
-                <button type="submit">Download CA Certificate</button>
+                <button type="submit">Generate CA Certificate</button>
+            </form>
+            <form action="/generate_ca_key" method="post">
+                <button type="submit">Download CA Private Key</button>
             </form>
         </div>
         
@@ -104,7 +107,10 @@
                 <label>Common Name (CN):</label>
                 <input type="text" name="common_name_int" required>
                 
-                <button type="submit">Download Intermediate Certificate</button>
+                <button type="submit">Generate Intermediate Certificate</button>
+            </form>
+            <form action="/generate_intermediate_key" method="post">
+                <button type="submit">Download Intermediate Private Key</button>
             </form>
         </div>
         
@@ -126,7 +132,10 @@
                 <label>Common Name (CN):</label>
                 <input type="text" name="common_name_part" required>
                 
-                <button type="submit">Download Partner Certificate</button>
+                <button type="submit">Generate Partner Certificate</button>
+            </form>
+            <form action="/generate_partner_key" method="post">
+                <button type="submit">Download Partner Private Key</button>
             </form>
         </div>
     </div>
